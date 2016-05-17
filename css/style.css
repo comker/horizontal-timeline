@@ -1,30 +1,5 @@
 /* -------------------------------- 
 
-Primary style
-
--------------------------------- */
-*, *::after, *::before {
-  box-sizing: border-box;
-}
-
-html {
-  font-size: 62.5%;
-}
-
-body {
-  font-size: 1.6rem;
-  font-family: "Fira Sans", sans-serif;
-  color: #383838;
-  background-color: #f8f8f8;
-}
-
-a {
-  color: #7b9d6f;
-  text-decoration: none;
-}
-
-/* -------------------------------- 
-
 Main Components 
 
 -------------------------------- */
@@ -119,7 +94,7 @@ Main Components
   text-align: center;
   font-size: 1.3rem;
   padding-bottom: 15px;
-  color: #383838;
+  /*color: #383838;*/
   /* fix bug on Safari - text flickering while timeline translates */
   -webkit-transform: translateZ(0);
   -moz-transform: translateZ(0);
@@ -163,9 +138,11 @@ Main Components
   border-color: #7b9d6f;
 }
 @media only screen and (min-width: 1100px) {
+  /*
   .cd-horizontal-timeline {
     margin: 6em auto;
   }
+  */
   .cd-horizontal-timeline::before {
     /* never visible - this is used in jQuery to check the current MQ */
     content: 'desktop';
@@ -309,7 +286,10 @@ Main Components
   margin: 10px auto;
 }
 .cd-horizontal-timeline .events-content em::before {
-  content: '- ';
+  content: '(';
+}
+.cd-horizontal-timeline .events-content em::after {
+  content: ')';
 }
 .cd-horizontal-timeline .events-content p {
   font-size: 1.4rem;
@@ -320,13 +300,14 @@ Main Components
 }
 @media only screen and (min-width: 768px) {
   .cd-horizontal-timeline .events-content h2 {
-    font-size: 7rem;
+    font-size: 3rem;
   }
   .cd-horizontal-timeline .events-content em {
     font-size: 2rem;
   }
   .cd-horizontal-timeline .events-content p {
     font-size: 1.8rem;
+    height: 14rem;
   }
 }
 
